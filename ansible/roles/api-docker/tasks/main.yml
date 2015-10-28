@@ -1,0 +1,17 @@
+---
+- name: update yum
+  shell: sudo yum update
+
+- name: install docker
+  shell: curl -sSL https://get.docker.com/ | sh
+
+- name: start docker service
+  service: name=docker state=started
+
+- name: pull latest rippled-package-builder:latest container
+  shell: sudo docker pull stevenzeiler/altnet-account-creator:latest
+
+- name: run container
+  #shell: sudo docker run -d -p 80:5000 -e "RIPPLE_ADDRESS={{ripple_address}" -e "RIPPLE_SECRET={{ripple_secret}}" stevenzeiler/altnet-account-creator
+  shell: sudo docker run -d -p 80:5000 stevenzeiler/altnet-account-creator
+

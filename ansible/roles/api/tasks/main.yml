@@ -1,0 +1,13 @@
+---
+- name: update aptitude
+  apt: update_cache=yes
+
+- name: download nodejs apt repo
+  shell: curl --silent --location https://deb.nodesource.com/setup_4.x | sudo bash - 
+
+- name: install nodejs 
+  apt: name=nodejs
+
+- name: install nginx
+  apt: name=nginx
+

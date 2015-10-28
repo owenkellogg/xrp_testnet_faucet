@@ -1,0 +1,7 @@
+[production]
+54.179.177.177
+
+[production:vars]
+ansible_ssh_private_key_file=skynet-keys/ap-southeast-1.pem
+ansible_ssh_user=ubuntu
+
