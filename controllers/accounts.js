@@ -9,7 +9,7 @@ module.exports = function(models, lib) {
       fundNewAccount().then(account => {
         res.status(201).send({
           account: account,
-          balances: `${Config.get('RIPPLED_SERVER_REST')}/v1/accounts/${account.address}/balances`
+          balance: Config.get('XRP_AMOUNT')
         })
       }) 
       .catch(error => {
