@@ -1,11 +1,11 @@
-import {fundNewAccount} from '../../lib/RippleAccountCreator'
+import {createNewAccount} from '../../lib/RippleAccountCreator'
 import assert from 'assert'
 
 describe('RippleAccountCreator', function() {
 
-  it('#fundNewAccount should fund a new Ripple account on altnet with 10,000 XRP', done => {
+  it('#createNewAccount should generate keys for a new Ripple account', done => {
 
-    fundNewAccount().then(account => {
+    createNewAccount().then(account => {
       console.log(account)
       assert(account.address)
       assert(account.secret)
